@@ -16,7 +16,8 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (_req, res) => {
-  const GGG = process.env.GGG | 'no env'
+  const GGG = process.env.GGG || 'no env'
+  console.log('LOG::', GGG)
   res.json({
     message: '🦄🌈✨👋🌎🌍🌏✨🌈🦄',
     env: GGG
