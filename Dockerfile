@@ -2,7 +2,8 @@ FROM node:20-alpine AS build
 WORKDIR /usr/src/app
 # Installing dependencies first can save time on rebuilds
 # We do need the full (dev) dependencies here
-COPY package.json yarn.lock .env ./
+# COPY package.json yarn.lock .env ./
+COPY package.json yarn.lock ./
 RUN yarn install
 # Then copy in the actual sources we need and build
 COPY esbuild.config.cjs ./
@@ -25,6 +26,6 @@ WORKDIR /usr/src/app
 # COPY --from=deps /usr/src/app/node_modules ./node_modules/
 COPY --from=build /usr/src/app/dist ./dist/
 COPY --from=build /usr/src/app/keys ./keys/
-COPY --from=build /usr/src/app/.env ./
+# COPY --from=build /usr/src/app/.env ./
 EXPOSE 9000
 CMD ["node", "dist/server.js"]
