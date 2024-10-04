@@ -73,4 +73,5 @@ typings/
 .serverless
 
 # dist
-dist
+dist/
+
