@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"] // Đảm bảo alias cũng được định nghĩa ở đây
+    }
+  }
+}

@@ -5,8 +5,8 @@ const cors = require('cors');
 
 require('dotenv').config();
 
-const middlewares = require('./middlewares');
-const api = require('./api');
+const middlewares = require('@/middlewares');
+const api = require('@/api');
 
 const app = express();
 
@@ -16,11 +16,11 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (_req, res) => {
-  const GGG = process.env.GGG || 'no env'
-  console.log('LOG::', GGG)
+  const GGG = process.env.GGG || 'no env';
+  console.log('LOG::', GGG);
   res.json({
     message: '🦄🌈✨👋🌎🌍🌏✨🌈🦄',
-    env: GGG
+    env: GGG,
   });
 });
 
