@@ -6,8 +6,7 @@ WORKDIR /usr/src/app
 COPY package.json yarn.lock ./
 RUN yarn install
 # Then copy in the actual sources we need and build
-COPY esbuild.config.cjs ./
-#COPY jsconfig.json esbuild.config.cjs ./
+COPY jsconfig.json esbuild.config.js ./
 COPY src/ ./src/
 COPY keys/ ./keys/
 RUN yarn build
