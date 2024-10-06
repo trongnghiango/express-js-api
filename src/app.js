@@ -20,7 +20,6 @@ app.get('/', (_req, res) => {
   console.log('LOG::', GGG)
   res.json({
     message: '🦄🌈✨👋🌎🌍🌏✨🌈🦄',
-    env: GGG,
   })
 })
 
