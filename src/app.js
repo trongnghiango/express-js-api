@@ -1,9 +1,10 @@
+require('dotenv').config()
+require('@/database/init.mongo')
+
 const express = require('express')
 const morgan = require('morgan')
 const helmet = require('helmet')
 const cors = require('cors')
-
-require('dotenv').config()
 
 const middlewares = require('@/middlewares')
 const api = require('@/api')

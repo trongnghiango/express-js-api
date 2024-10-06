@@ -4,8 +4,8 @@
   "description": "A basic starter for an express.js API",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
+    "start": "node dist/server.js",
+    "dev": "nodemon --watch src --exec \"npm run build && node dist/server.js\"",
     "build": "node esbuild.config.js",
     "lint": "eslint --fix src",
     "test": "jest"
@@ -29,6 +29,7 @@
     "@babel/core": "^7.25.7",
     "@babel/preset-env": "^7.25.7",
     "babel-plugin-module-resolver": "^5.0.2",
+    "chokidar": "^4.0.1",
     "esbuild": "^0.24.0",
     "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "^15.0.0",
